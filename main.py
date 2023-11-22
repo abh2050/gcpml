@@ -5,9 +5,10 @@
 import openai
 import random
 import json
+from key import api_key
 
 # Replace 'YOUR_API_KEY' with your actual OpenAI API key
-openai.api_key = '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'
+openai.api_key = api_key
 
 
 # Define examples for the model to understand the classification context
@@ -34,9 +35,9 @@ for tweet in random_tweets:
     reply = tweet['reply']
 
     # Print the main tweet and reply
-    print(f"Main Tweet: '{main_tweet}'")
-    print(f"Reply: '{reply}'")
-    print()
+    #print(f"Main Tweet: '{main_tweet}'")
+    #print(f"Reply: '{reply}'")
+    #print()
 
 
 # Function to classify a tweet
@@ -55,16 +56,14 @@ def classify_tweet(tweet_text):
     return response.choices[0].text.strip()
 
 
-# Classify the selected tweets and print the results
+# Classify the replies of selected tweets and print the results
 for tweet in random_tweets:
     main_tweet = tweet['main_tweet']
     reply = tweet['reply']
 
-    # Classify main tweet and reply
-    main_tweet_label = classify_tweet(main_tweet)
+    # Classify only the reply
     reply_label = classify_tweet(reply)
 
-    # Print the classification results
-    print(f"Main Tweet: '{main_tweet}'\nClassification: {main_tweet_label}\n")
-    print(f"Reply: '{reply}'\nClassification: {reply_label}\n")
+    # Print the main tweet and the classification result for the reply
+    print(f"Main Tweet: '{main_tweet}'\nReply: '{reply}'\nReply Classification: {reply_label}\n")
 

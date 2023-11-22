@@ -9,6 +9,9 @@ COPY . .
 # Install dependencies
 RUN pip install openai==0.28
 
+# Make port available to the world outside this container
+EXPOSE 8080
+
 # Command to run the application
 CMD ["python", "./main.py"]
 
