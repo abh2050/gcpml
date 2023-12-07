@@ -241,7 +241,7 @@ Tweet Classifier is a software application designed to classify tweets as either
 
 - **URL:** The API endpoint for the Tweet Classifier cloud function.
 - **Example:** `https://us-west1-spheric-bloom-350617.cloudfunctions.net/tweet`
-- **Method:** POST (assuming the cloud function is set up to receive POST requests)
+- **Method:** POST 
 </details>
 
 <details>
