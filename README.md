@@ -52,7 +52,7 @@ Tweet Classifier is a software application designed to classify tweets as either
 4. Download the Tweet Classifier codebase.
 
 **Deployment:**
-- Run the application by executing the Python script: `python tweet_classifier.py`
+- Run the application by executing the Python script: `main.py`
 - The GUI window should open, ready for use.
 
 ### 3.2. Docker Deployment
