@@ -149,6 +149,8 @@ Tweet Classifier is a software application designed to classify tweets as either
 
 ### 4.2. Walk-through for Main Scenario
 
+![process](https://github.com/abh2050/gcpml/blob/main/board-hilarious-farceur.jpg)
+
 **Local Deployment:**
 
 **Starting the Application:**
