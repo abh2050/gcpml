@@ -1,11 +1,13 @@
 ![image](https://miro.medium.com/v2/resize:fit:1400/1*NO_n8kfHA9FzTJRZV8wPXA.jpeg)
 
-![Made with Python](https://img.shields.io/badge/Made_with-Python-3776AB)
-![Tkinter GUI](https://img.shields.io/badge/Tkinter_GUI-01D277)
-![Uses OpenAI API](https://img.shields.io/badge/Uses_OpenAI_API-FF9900)
+![Python 3.x](https://img.shields.io/badge/Made_with-Python_3.x-3776AB)
+![OpenAI API 0.28](https://img.shields.io/badge/OpenAI_API_0.28-FF9900)
+![Functions Framework 3.x](https://img.shields.io/badge/Functions_Framework_3.x-FF69B4)
+![Flask 1.1.4](https://img.shields.io/badge/Flask_1.1.4-000000)
+![Jinja2 2.11.3](https://img.shields.io/badge/Jinja2_2.11.3-B41717)
+![MarkupSafe 1.1.1](https://img.shields.io/badge/MarkupSafe_1.1.1-9CF)
 ![Deployed on GCP](https://img.shields.io/badge/Deployed_on_GCP-blue)
 ![Dockerized](https://img.shields.io/badge/Dockerized-2496ED)
-
 
 
 # Tweet Classifier: User Guide and Technical Documentation
