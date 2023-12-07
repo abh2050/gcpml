@@ -1,3 +1,6 @@
+![image](https://miro.medium.com/v2/resize:fit:1400/1*NO_n8kfHA9FzTJRZV8wPXA.jpeg)
+
+
 # Tweet Classifier: User Guide and Technical Documentation
 
 ## Table of Contents
