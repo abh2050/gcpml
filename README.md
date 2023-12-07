@@ -115,6 +115,7 @@ Tweet Classifier is a software application designed to classify tweets as either
 ---
 
 ## 4. User Guide
+![sequence](https://github.com/abh2050/gcpml/blob/main/Sequence.png)
 
 ### 4.1. Main Features
 
