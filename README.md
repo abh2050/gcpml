@@ -1,5 +1,12 @@
 ![image](https://miro.medium.com/v2/resize:fit:1400/1*NO_n8kfHA9FzTJRZV8wPXA.jpeg)
 
+![Made with Python](https://img.shields.io/badge/Made_with-Python-3776AB)
+![Tkinter GUI](https://img.shields.io/badge/Tkinter_GUI-01D277)
+![Uses OpenAI API](https://img.shields.io/badge/Uses_OpenAI_API-FF9900)
+![Deployed on GCP](https://img.shields.io/badge/Deployed_on_GCP-blue)
+![Dockerized](https://img.shields.io/badge/Dockerized-2496ED)
+
+
 
 # Tweet Classifier: User Guide and Technical Documentation
 
