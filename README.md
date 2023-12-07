@@ -348,16 +348,38 @@ Tweet Classifier is a software application designed to classify tweets as either
 <details>
 <summary><strong>Frequently Asked Questions:</strong></summary>
 
-- **Q1: How can I update the classification examples used by the application?**
+## Frequently Asked Questions (FAQ)
 
-  **Answer:**
-  - For local and Docker deployments, modify the `classification_examples` list in the Python script.
-  - For the cloud deployment, update the examples in the cloud function before redeployment.
+### Q1: How can I update the classification examples used by the application?
+**A:** For local and Docker deployments, modify the `classification_examples` list in the Python script. For the cloud deployment, update the examples in the cloud function before redeployment.
 
-- **Q2: What should I do if the classification results are not accurate?**
+### Q2: What should I do if the classification results are not accurate?
+**A:** The accuracy of classifications largely depends on the training of the OpenAI model and the examples provided. You can improve accuracy by refining the examples or retraining the model with more data.
 
-  **Answer:**
-  - The accuracy of classifications largely depends on the training of the OpenAI model and the examples provided.
+### Q3: Can the Tweet Classifier handle multiple languages?
+**A:** Currently, the Tweet Classifier is optimized for English. However, it can be adapted to other languages by using a multilingual model from OpenAI and adjusting the classification examples accordingly.
+
+### Q4: Is there a limit to the number of tweets that can be classified at once?
+**A:** For local and Docker deployments, the limit depends on the system's resources. For cloud deployments, the limit is determined by the Google Cloud Function's quotas and limits.
+
+### Q5: How secure is the Tweet Classifier in handling sensitive data?
+**A:** The Tweet Classifier does not store tweet data permanently. However, ensure that your OpenAI API key and cloud credentials are securely managed. For sensitive data, consider implementing additional encryption and security measures.
+
+### Q6: Can I integrate the Tweet Classifier with other social media platforms?
+**A:** While the current version is designed for Twitter, the application can be modified to work with other social media platforms by adjusting the input and output formats and API integrations.
+
+### Q7: How can I contribute to the development of the Tweet Classifier?
+**A:** Contributions can be made via the project's GitHub repository. You can fork the repository, make changes, and submit a pull request for review.
+
+### Q8: Are there any costs associated with using the Tweet Classifier?
+**A:** While the software is free, using the OpenAI API and cloud services (if deployed on Google Cloud) may incur costs. Check the respective service providers for pricing details.
+
+### Q9: How do I report bugs or request features?
+**A:** Bugs can be reported, and feature requests can be made through the project's issue tracker on GitHub or by contacting the development team directly.
+
+### Q10: Is there any user support or community forum for the Tweet Classifier?
+**A:** User support is primarily provided through the GitHub repository. Additionally, you can join community forums or discussion groups related to the project for more interactive support.
+
 </details>
 
 
