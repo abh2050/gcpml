@@ -1,13 +1,13 @@
 ![image](https://miro.medium.com/v2/resize:fit:1400/1*NO_n8kfHA9FzTJRZV8wPXA.jpeg)
 
-![Python 3.x](https://img.shields.io/badge/Made_with-Python_3.x-3776AB?style=flat&logo=python&logoColor=white)
-![OpenAI API 0.28](https://img.shields.io/badge/OpenAI_API_0.28-FF9900?style=flat&logo=openai&logoColor=white)
-![Functions Framework 3.x](https://img.shields.io/badge/Functions_Framework_3.x-FF69B4?style=flat&logo=google-cloud&logoColor=white)
-![Flask 1.1.4](https://img.shields.io/badge/Flask_1.1.4-000000?style=flat&logo=flask&logoColor=white)
-![Jinja2 2.11.3](https://img.shields.io/badge/Jinja2_2.11.3-B41717?style=flat&logo=jinja&logoColor=white)
-![MarkupSafe 1.1.1](https://img.shields.io/badge/MarkupSafe_1.1.1-9CF?style=flat)
-![Deployed on GCP](https://img.shields.io/badge/Deployed_on_GCP-blue?style=flat&logo=google-cloud&logoColor=white)
-![Dockerized](https://img.shields.io/badge/Dockerized-2496ED?style=flat&logo=docker&logoColor=white)
+![Python 3.8](https://img.shields.io/badge/Python-3.8-blue?style=flat&logo=python&logoColor=white&link=https://www.python.org/)
+![OpenAI API 0.28](https://img.shields.io/badge/OpenAI_API_0.28-FF9900?style=flat&logo=openai&logoColor=white&link=https://openai.com/api/)
+![Functions Framework 3.x](https://img.shields.io/badge/Functions_Framework_3.x-FF69B4?style=flat&logo=google-cloud&logoColor=white&link=https://cloud.google.com/functions)
+![Flask 1.1.4](https://img.shields.io/badge/Flask_1.1.4-000000?style=flat&logo=flask&logoColor=white&link=https://flask.palletsprojects.com/)
+![Jinja2 2.11.3](https://img.shields.io/badge/Jinja2_2.11.3-B41717?style=flat&logo=jinja&logoColor=white&link=https://jinja.palletsprojects.com/)
+![MarkupSafe 1.1.1](https://img.shields.io/badge/MarkupSafe_1.1.1-9CF?style=flat&logo=python&logoColor=white&link=https://palletsprojects.com/p/markupsafe/)
+![Deployed on GCP](https://img.shields.io/badge/Deployed_on_GCP-blue?style=flat&logo=google-cloud&logoColor=white&link=https://cloud.google.com/)
+![Dockerized](https://img.shields.io/badge/Dockerized-2496ED?style=flat&logo=docker&logoColor=white&link=https://www.docker.com/)
 
 
 
