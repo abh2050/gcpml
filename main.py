@@ -1,15 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import tkinter as tk
 import tkinter.font as tkfont
 from tkinter import PhotoImage, messagebox
 from PIL import Image, ImageTk
 import openai
 import threading
+from queue import Queue
 from key import api_key  # Import your API key from a separate file
 
 # Set your OpenAI API key
@@ -36,47 +31,62 @@ def classify_tweet(tweet_text):
 
     return response.choices[0].text.strip()
 
+# Create a queue for storing classification tasks
+task_queue = Queue()
+
+# Worker function to classify tweets in the background
+def worker():
+    while True:
+        # Get a tweet from the queue
+        tweet_text = task_queue.get()
+
+        # Perform classification
+        classification = classify_tweet(tweet_text)
+
+        # Safely update the UI with the result
+        root.after(0, update_ui, tweet_text, classification)
+
+        # Mark the task as completed
+        task_queue.task_done()
+
+def update_ui(tweet_text, classification):
+    # Update the UI with the classification result for the given tweet text
+    classification_label.config(text=f"Tweet: {tweet_text}\nClassification: {classification}")
+
 # Function to handle the classify button click
 def on_classify():
     main_tweet = main_tweet_entry.get("1.0", "end-1c")
     reply_tweet = reply_tweet_entry.get("1.0", "end-1c")
 
     if main_tweet and reply_tweet:
-        # Use threading to perform classification in the background
-        thread = threading.Thread(target=classify_and_show_result, args=(reply_tweet,))
-        thread.start()
+        # Add task to the queue
+        task_queue.put(reply_tweet)
     else:
         messagebox.showwarning("Warning", "Please enter both a main tweet and a reply.")
 
-# Function to perform classification and show the result
-def classify_and_show_result(tweet_text):
-    classification = classify_tweet(tweet_text)
-    messagebox.showinfo("Classification Result", f"Reply Classification: {classification}")
+# Create worker threads
+for _ in range(5):
+    t = threading.Thread(target=worker, daemon=True)
+    t.start()
 
 # Function to close the application
 def on_exit():
-    root.destroy()
+    root.quit()
 
 # Create the main window
 root = tk.Tk()
 root.title("Tweet Classifier")
 root.geometry("500x400")  # Width x Height
 root.minsize(500, 400)    # Minimum size of the window
-root.config(bg="#f0f0f0") # Background color
+root.config(bg="#f0f0f0")
 
 # Set a font style
 fontStyle = tkfont.Font(family="Lucida Grande", size=12)
 
-# Uncomment and correct this section for image display
-logo_image = Image.open("pic.png")  # Replace with your actual logo path
-logo_image = logo_image.resize((100, 100), Image.ANTIALIAS)  # Resize to 100x100 pixels or your desired size
-logo_photo = ImageTk.PhotoImage(logo_image)
-logo_label = tk.Label(root, image=logo_photo, bg="#f0f0f0")
-logo_label.pack(pady=10)
+# Image and label setup ...
 
 # Set a colored background for the main window and frames
-background_color = "#ADD8E6"  # Light blue color, you can choose your preferred color
-root.config(bg=background_color)
+background_color = "#ADD8E6"
 
 # Main frame for content
 main_frame = tk.Frame(root, padx=10, pady=10, bg=background_color)
@@ -85,7 +95,7 @@ main_frame.pack(expand=True, fill=tk.BOTH)
 # Frame for the main tweet input
 main_tweet_frame = tk.Frame(main_frame, pady=5, bg=background_color)
 main_tweet_frame.pack(fill=tk.BOTH)
-tk.Label(main_tweet_frame, text="Main Tweet:", font=fontStyle, bg="#f0f0f0").pack(anchor="w")
+tk.Label(main_tweet_frame, text="Main Tweet:", font=fontStyle, bg=background_color).pack(anchor="w")
 main_tweet_entry = tk.Text(main_tweet_frame, height=5, width=40, font=fontStyle)
 main_tweet_entry.pack(fill=tk.BOTH, expand=True)
 
@@ -100,28 +110,31 @@ reply_tweet_entry.pack(fill=tk.BOTH, expand=True)
 button_frame = tk.Frame(main_frame, pady=5, bg=background_color)
 button_frame.pack(fill=tk.X)
 
+# Button sizes and font
+buttonWidth = 15  # Width of the buttons
+buttonHeight = 2  # Height of the buttons
+
 # Classify button
-classify_btn = tk.Button(button_frame, text="Classify Reply", command=on_classify, font=fontStyle)
+classify_btn = tk.Button(button_frame, text="Classify Reply", command=on_classify, font=fontStyle, width=buttonWidth, height=buttonHeight)
 classify_btn.pack(side=tk.LEFT, padx=5)
 
 # Exit button
-exit_btn = tk.Button(button_frame, text="Exit", command=on_exit, font=fontStyle)
+exit_btn = tk.Button(button_frame, text="Exit", command=on_exit, font=fontStyle, width=buttonWidth, height=buttonHeight)
 exit_btn.pack(side=tk.RIGHT, padx=5)
+
+# Reset button
+reset_btn = tk.Button(button_frame, text="Reset", font=fontStyle, width=buttonWidth, height=buttonHeight)
+reset_btn.pack(side=tk.LEFT, padx=5)
 
 def reset_entries():
     main_tweet_entry.delete("1.0", tk.END)
     reply_tweet_entry.delete("1.0", tk.END)
 
-# Reset button
-reset_btn = tk.Button(button_frame, text="Reset", command=reset_entries, font=fontStyle)
-reset_btn.pack(side=tk.LEFT, padx=5)
+reset_btn.config(command=reset_entries)
+
+# Label to display classification results
+classification_label = tk.Label(main_frame, font=fontStyle, bg=background_color)
+classification_label.pack()
 
 # Start the GUI event loop
 root.mainloop()
-
-
-# In[ ]:
-
-
-
-
