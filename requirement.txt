@@ -1,9 +1,3 @@
-functions-framework==3.*
-openai==0.28
-Flask==1.1.4
-Jinja2==2.11.3
-MarkupSafe==1.1.1
-google-cloud-storage
 streamlit
 google-generativeai
 python-dotenv
