@@ -30,7 +30,7 @@
 ---
 
 ## 1. Introduction
-**Name:** Tweet Classifier  
+**Name:** Tweet Classifier Using OpenAI 
 **Description:**  
 Tweet Classifier is a software application designed to classify tweets as either 'Non Spam' or 'Spam.' This tool is particularly useful for social media managers, digital marketers, and individuals who manage multiple Twitter accounts. It leverages the OpenAI API to analyze tweet content and provide a classification based on pre-defined examples.
 
